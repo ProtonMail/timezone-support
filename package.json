@@ -31,9 +31,6 @@
   "engines": {
     "node": ">=6"
   },
-  "bin": {
-    "create-timezone-data": "./bin/create-timezone-data"
-  },
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
