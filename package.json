@@ -43,7 +43,6 @@
     "util"
   ],
   "scripts": {
-    "prepare": "npm run build",
     "lint": "run-s lint:js lint:ts",
     "lint:fix": "standard --verbose --fix bin/create-timezone-data perf/*.js 'src/**/*.js' test/*.js util/*.js",
     "lint:js": "standard --verbose bin/create-timezone-data perf/*.js 'src/**/*.js' test/*.js util/*.js",
