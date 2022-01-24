@@ -119,6 +119,10 @@ function listTimeZones() {
   return names.slice();
 }
 
+function getTimeZoneLinks() {
+  return Object.assign({}, links);
+}
+
 function findTimeZone(alias) {
   var name = links[alias] || alias;
   var timeZone = instances[name];
@@ -388,6 +392,7 @@ function convertDateToTime(date) {
 exports.convertDateToTime = convertDateToTime;
 exports.convertTimeToDate = convertTimeToDate;
 exports.findTimeZone = findTimeZone;
+exports.getTimeZoneLinks = getTimeZoneLinks;
 exports.getUTCOffset = getUTCOffset;
 exports.getUnixTime = getUnixTime;
 exports.getZonedTime = getZonedTime;
