@@ -1,5 +1,5 @@
 {
-  "name": "timezone-support",
+  "name": "@protontech/timezone-support",
   "version": "0.0.0-development",
   "description": "Lightweight time zone support for your applications or other date libraries.",
   "author": {
