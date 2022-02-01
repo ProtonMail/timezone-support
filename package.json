@@ -1,6 +1,6 @@
 {
   "name": "@protontech/timezone-support",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "Lightweight time zone support for your applications or other date libraries.",
   "author": {
     "name": "Ferdinand Prantl",
