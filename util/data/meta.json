@@ -1,5 +1,5 @@
 {
-	"version": "2024a",
+	"version": "2025a",
 	"countries": {
 		"AD": {
 			"name": "Andorra",
@@ -74,6 +74,7 @@
 				"Pacific/Auckland",
 				"Pacific/Port_Moresby",
 				"Asia/Riyadh",
+				"Asia/Singapore",
 				"Antarctica/McMurdo",
 				"Antarctica/DumontDUrville",
 				"Antarctica/Syowa"
@@ -126,7 +127,8 @@
 				"Australia/Adelaide",
 				"Australia/Darwin",
 				"Australia/Perth",
-				"Australia/Eucla"
+				"Australia/Eucla",
+				"Asia/Tokyo"
 			]
 		},
 		"AW": {
@@ -1174,8 +1176,7 @@
 			"abbr": "MN",
 			"zones": [
 				"Asia/Ulaanbaatar",
-				"Asia/Hovd",
-				"Asia/Choibalsan"
+				"Asia/Hovd"
 			]
 		},
 		"MO": {
@@ -3374,9 +3375,10 @@
 			"lat": 35.6544,
 			"long": 139.7447,
 			"countries": [
-				"JP"
+				"JP",
+				"AU"
 			],
-			"comments": ""
+			"comments": "Eyre Bird Observatory"
 		},
 		"Africa/Nairobi": {
 			"name": "Africa/Nairobi",
@@ -3624,16 +3626,7 @@
 			"countries": [
 				"MN"
 			],
-			"comments": "Bayan-Ölgii, Govi-Altai, Hovd, Uvs, Zavkhan"
-		},
-		"Asia/Choibalsan": {
-			"name": "Asia/Choibalsan",
-			"lat": 48.0667,
-			"long": 114.5,
-			"countries": [
-				"MN"
-			],
-			"comments": "Dornod, Sükhbaatar"
+			"comments": "Bayan-Ölgii, Hovd, Uvs"
 		},
 		"Asia/Macau": {
 			"name": "Asia/Macau",
@@ -3984,8 +3977,8 @@
 		},
 		"Asia/Manila": {
 			"name": "Asia/Manila",
-			"lat": 14.5833,
-			"long": 121,
+			"lat": 14.5867,
+			"long": 120.9678,
 			"countries": [
 				"PH"
 			],
@@ -4432,9 +4425,10 @@
 			"long": 103.85,
 			"countries": [
 				"SG",
+				"AQ",
 				"MY"
 			],
-			"comments": "peninsular Malaysia"
+			"comments": "peninsular Malaysia, Concordia"
 		},
 		"America/Paramaribo": {
 			"name": "America/Paramaribo",
