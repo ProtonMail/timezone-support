@@ -1,5 +1,5 @@
 {
-	"version": "2025a",
+	"version": "2026f",
 	"countries": {
 		"AD": {
 			"name": "Andorra",
@@ -338,11 +338,11 @@
 				"America/Edmonton",
 				"America/Cambridge_Bay",
 				"America/Inuvik",
+				"America/Vancouver",
 				"America/Dawson_Creek",
 				"America/Fort_Nelson",
 				"America/Whitehorse",
 				"America/Dawson",
-				"America/Vancouver",
 				"America/Panama",
 				"America/Puerto_Rico",
 				"America/Phoenix",
@@ -393,7 +393,7 @@
 			]
 		},
 		"CI": {
-			"name": "Côte d'Ivoire",
+			"name": "Côte d’Ivoire",
 			"abbr": "CI",
 			"zones": [
 				"Africa/Abidjan"
@@ -411,6 +411,7 @@
 			"abbr": "CL",
 			"zones": [
 				"America/Santiago",
+				"America/Coyhaique",
 				"America/Punta_Arenas",
 				"Pacific/Easter"
 			]
@@ -2667,7 +2668,7 @@
 			"countries": [
 				"CA"
 			],
-			"comments": "Central - ON (west), Manitoba"
+			"comments": "EST - Manitoba, ON (northwest)"
 		},
 		"America/Resolute": {
 			"name": "America/Resolute",
@@ -2712,7 +2713,7 @@
 			"countries": [
 				"CA"
 			],
-			"comments": "Mountain - AB, BC(E), NT(E), SK(W)"
+			"comments": "CST - AB, BC(E), NT(E), SK(W)"
 		},
 		"America/Cambridge_Bay": {
 			"name": "America/Cambridge_Bay",
@@ -2730,7 +2731,16 @@
 			"countries": [
 				"CA"
 			],
-			"comments": "Mountain - NT (west)"
+			"comments": "CST - NT (west)"
+		},
+		"America/Vancouver": {
+			"name": "America/Vancouver",
+			"lat": 49.2667,
+			"long": -122.8833,
+			"countries": [
+				"CA"
+			],
+			"comments": "MST - BC (most areas)"
 		},
 		"America/Dawson_Creek": {
 			"name": "America/Dawson_Creek",
@@ -2767,15 +2777,6 @@
 				"CA"
 			],
 			"comments": "MST - Yukon (west)"
-		},
-		"America/Vancouver": {
-			"name": "America/Vancouver",
-			"lat": 49.2667,
-			"long": -122.8833,
-			"countries": [
-				"CA"
-			],
-			"comments": "Pacific - BC (most areas)"
 		},
 		"Europe/Zurich": {
 			"name": "Europe/Zurich",
@@ -2826,6 +2827,15 @@
 			],
 			"comments": "most of Chile"
 		},
+		"America/Coyhaique": {
+			"name": "America/Coyhaique",
+			"lat": -44.4333,
+			"long": -71.9333,
+			"countries": [
+				"CL"
+			],
+			"comments": "Aysén Region"
+		},
 		"America/Punta_Arenas": {
 			"name": "America/Punta_Arenas",
 			"lat": -52.85,
@@ -2833,7 +2843,7 @@
 			"countries": [
 				"CL"
 			],
-			"comments": "Region of Magallanes"
+			"comments": "Magallanes Region"
 		},
 		"Pacific/Easter": {
 			"name": "Pacific/Easter",
@@ -3508,7 +3518,7 @@
 			"countries": [
 				"KZ"
 			],
-			"comments": "Atyraū/Atirau/Gur'yev"
+			"comments": "Atyraū/Atirau/Gur’yev"
 		},
 		"Asia/Oral": {
 			"name": "Asia/Oral",
@@ -3964,7 +3974,7 @@
 				"AQ",
 				"FM"
 			],
-			"comments": "Papua New Guinea (most areas), Chuuk, Yap, Dumont d'Urville"
+			"comments": "Papua New Guinea (most areas), Chuuk, Yap, Dumont d’Urville"
 		},
 		"Pacific/Bougainville": {
 			"name": "Pacific/Bougainville",
