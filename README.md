@@ -103,3 +103,7 @@ Licensed under the MIT license.
 [Design concepts]: ./docs/design.md#design-concepts
 [Generating custom time zone data]: ./docs/usage.md#generate-custom-time-zone-data
 [API reference]: ./docs/API.md#api-reference
+
+## Updating the time zone database
+
+The time zone data come from the [moment-timezone](https://github.com/moment/moment-timezone) dependency (`data/packed/latest.json`). To update it, bump that dependency, check that `pnpm test` passes and publish a new version. No data file is committed, and `npm run generate` rebuilds `src/lookup/*` from the dependency.

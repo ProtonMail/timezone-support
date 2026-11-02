@@ -1,6 +1,6 @@
 {
-  "name": "timezone-support",
-  "version": "2.0.2",
+  "name": "@protontech/timezone-support",
+  "version": "3.2.0",
   "description": "Lightweight time zone support for your applications or other date libraries.",
   "author": {
     "name": "Ferdinand Prantl",
@@ -91,7 +91,6 @@
   "files": [
     "bin",
     "dist",
-    "util/data",
     "util/data-creator.js"
   ],
   "scripts": {
@@ -132,10 +131,10 @@
     ]
   },
   "dependencies": {
-    "moment-timezone": "0.5.39"
+    "moment-timezone": "^0.6.6"
   },
   "devDependencies": {
-    "@babel/core": "7.20.5",
+    "@babel/core": "^7.22.0",
     "@babel/preset-env": "7.20.2",
     "@rollup/plugin-babel": "6.0.3",
     "@types/jest": "29.2.3",
