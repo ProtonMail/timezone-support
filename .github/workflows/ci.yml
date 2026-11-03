@@ -30,6 +30,8 @@ jobs:
         ln -sf "$BIN" node_modules/.bin/denolint
         node_modules/.bin/denolint -V
     - name: Test
+      env:
+        PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome-stable
       run: npm test
     - name: Examples
       run: |
