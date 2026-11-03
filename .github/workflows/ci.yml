@@ -21,6 +21,8 @@ jobs:
         version: '>=6'
         run_install: |
           - args: [--frozen-lockfile, --no-verify-store-integrity]
+    - name: Link denolint binary
+      run: pnpm rebuild denolint
     - name: Test
       run: npm test
     - name: Examples
