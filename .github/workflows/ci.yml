@@ -22,7 +22,13 @@ jobs:
         run_install: |
           - args: [--frozen-lockfile, --no-verify-store-integrity]
     - name: Link denolint binary
-      run: pnpm rebuild denolint
+      run: |
+        BIN="$(find "$PWD/node_modules/.pnpm" -path '*@denolint/denolint-linux-x64-gnu/denolint' -type f | head -n 1)"
+        test -n "$BIN"
+        chmod +x "$BIN"
+        mkdir -p node_modules/.bin
+        ln -sf "$BIN" node_modules/.bin/denolint
+        node_modules/.bin/denolint -V
     - name: Test
       run: npm test
     - name: Examples
