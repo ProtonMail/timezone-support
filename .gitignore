@@ -8,4 +8,4 @@ src/lookup/data*.js
 src/index-*.d.ts
 src/lookup/data-*.d.ts
 test/browser
-test/typings.test.js
+test/types.test.js

@@ -1,8 +1,41 @@
-const { outputFile: writeFile } = require('fs-extra')
-const tz = require('../node_modules/moment-timezone/moment-timezone-utils').tz
-const groupLeaders = require('./data/group-leaders.json')
-const unpackedTimeZoneData = require('./data/unpacked.json')
-const packedTimeZoneData = require('./data/packed.json')
+const { mkdir, writeFile } = require('fs/promises')
+const { dirname } = require('path')
+const moment = require('moment-timezone')
+const tz = require('moment-timezone/moment-timezone-utils').tz
+// The time zone data come from the installed "moment-timezone" package. Updating
+// the time zone database means updating the version of this dependency.
+const packedTimeZoneData = require('moment-timezone/data/packed/latest.json')
+
+// Groups of aliases (links) with the same data, led by the canonical zone name
+function getGroupLeaders (packedData) {
+  const groups = {}
+  packedData.links.forEach(link => {
+    const [leader, alias] = link.split('|');
+    (groups[leader] = groups[leader] || [leader]).push(alias)
+  })
+  return groups
+}
+
+// Zones with the full history, which the year-limited data are cut from
+function getUnpackedData (packedData) {
+  moment.tz.load(packedData)
+  return {
+    version: packedData.version,
+    zones: moment.tz.names().map(name => {
+      const { abbrs, untils, offsets, population } = moment.tz.zone(name)
+      // Infinity is not representable in JSON, it is stored as null
+      return { name, abbrs, untils: untils.map(until => isFinite(until) ? until : null), offsets, population }
+    }),
+    links: [],
+    countries: packedData.countries.map(country => {
+      const [name, zones] = country.split('|')
+      return { name, zones: zones.split(' ') }
+    })
+  }
+}
+
+const groupLeaders = getGroupLeaders(packedTimeZoneData)
+const unpackedTimeZoneData = getUnpackedData(packedTimeZoneData)
 
 function limitData (firstYear, lastYear) {
   return firstYear && lastYear
@@ -35,7 +68,7 @@ function formatUMDModule (content, umdName) {
 })))`
 }
 
-function createTimeZoneData (options = {}) {
+async function createTimeZoneData (options = {}) {
   const {
     asModule, asCjsModule, asAmdModule, asUmdModule, umdName,
     firstYear, lastYear, outputFile
@@ -57,9 +90,11 @@ function createTimeZoneData (options = {}) {
     } else {
       console.log(`Writing all time zone data to "${outputFile}"...`)
     }
-    return writeFile(outputFile, content)
+    const outputDir = dirname(outputFile)
+    if (outputDir !== '.') await mkdir(outputDir, { recursive: true })
+    await writeFile(outputFile, content)
   }
-  return Promise.resolve(content)
+  return content
 }
 
 exports.createTimeZoneData = createTimeZoneData

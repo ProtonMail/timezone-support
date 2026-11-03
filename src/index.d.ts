@@ -6,7 +6,6 @@ interface TimeZoneInfo {
   untils: number[]
   offsets: number[]
   population: number
-
 }
 
 interface TimeZoneOffset {
@@ -44,7 +43,8 @@ declare function convertTimeToDate (time: Time): Date
 declare function convertDateToTime (date: Date): Time
 
 export {
-  listTimeZones, getTimeZoneLinks, findTimeZone, getUTCOffset, getZonedTime, getUnixTime, setTimeZone, convertTimeToDate, convertDateToTime
+  listTimeZones, getTimeZoneLinks, findTimeZone, getUTCOffset, getZonedTime,
+  getUnixTime, setTimeZone, convertTimeToDate, convertDateToTime
 }
 
 // export as namespace timezoneSupport;

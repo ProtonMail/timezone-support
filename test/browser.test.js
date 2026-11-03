@@ -12,28 +12,14 @@ let server
 let browser
 let page
 
-const customMatchers = {
-  toPass: function () {
-    return {
-      compare: function (result, message) {
-        return {
-          pass: result,
-          message: () => message
-        }
-      }
-    }
-  }
-}
-
 beforeAll(done => {
-  jasmine.addMatchers(customMatchers)
   server = connect()
     .use(serve(join(__dirname, '..'), { etag: false }))
     .listen(port, () => {
       puppeteer
         .launch({
           headless: true,
-          args: process.env.TRAVIS === 'true' ? [ '--no-sandbox' ] : []
+          args: process.env.TRAVIS === 'true' || process.env.CI === 'true' ? [ '--no-sandbox', '--disable-dev-shm-usage' ] : []
         })
         .then(result => {
           browser = result
@@ -43,17 +29,17 @@ beforeAll(done => {
           page = result
           done()
         })
+        .catch(done.fail)
     })
-})
+}, 60000)
 
 afterAll(done => {
-  browser
-    .close()
+  Promise.resolve(browser && browser.close())
     .then(() => server.close(done))
 })
 
 const tests = readdirSync(join(__dirname, 'browser'))
-for (let test of tests) {
+for (const test of tests) {
   it(`Execute ${test}`, done => {
     let result
     page
@@ -72,9 +58,8 @@ for (let test of tests) {
           return { summary, duration, results }
         })
       })
-      .then(({ summary, duration, results }) => {
-        expect(result).toPass(`${summary}; ${duration}\n${results}`)
-        done()
-      })
+      .then(({ summary, duration, results }) =>
+        expect(result).toPass(`${summary}; ${duration}\n${results}`))
+      .finally(() => done())
   })
 }
