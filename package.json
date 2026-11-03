@@ -44,46 +44,57 @@
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "require": "./dist/index.js",
       "import": "./dist/index.mjs"
     },
     "./index": {
+      "types": "./dist/index.d.ts",
       "require": "./dist/index.js",
       "import": "./dist/index.mjs"
     },
     "./data": {
+      "types": "./dist/data.d.ts",
       "require": "./dist/data.js",
       "import": "./dist/data.mjs"
     },
     "./lookup-convert": {
+      "types": "./dist/lookup-convert.d.ts",
       "require": "./dist/lookup-convert.js",
       "import": "./dist/lookup-convert.mjs"
     },
     "./parse-format": {
+      "types": "./dist/parse-format.d.ts",
       "require": "./dist/parse-format.js",
       "import": "./dist/parse-format.mjs"
     },
     "./index-1900-2050": {
+      "types": "./dist/index-1900-2050.d.ts",
       "require": "./dist/index-1900-2050.js",
       "import": "./dist/index-1900-2050.mjs"
     },
     "./data-1900-2050": {
+      "types": "./dist/data-1900-2050.d.ts",
       "require": "./dist/data-1900-2050.js",
       "import": "./dist/data-1900-2050.mjs"
     },
     "./index-1970-2038": {
+      "types": "./dist/index-1970-2038.d.ts",
       "require": "./dist/index-1970-2038.js",
       "import": "./dist/index-1970-2038.mjs"
     },
     "./data-1970-2038": {
+      "types": "./dist/data-1970-2038.d.ts",
       "require": "./dist/data-1970-2038.js",
       "import": "./dist/data-1970-2038.mjs"
     },
     "./index-2012-2022": {
+      "types": "./dist/index-2012-2022.d.ts",
       "require": "./dist/index-2012-2022.js",
       "import": "./dist/index-2012-2022.mjs"
     },
     "./data-2012-2022": {
+      "types": "./dist/data-2012-2022.d.ts",
       "require": "./dist/data-2012-2022.js",
       "import": "./dist/data-2012-2022.mjs"
     }
