@@ -19,7 +19,7 @@ beforeAll(done => {
       puppeteer
         .launch({
           headless: true,
-          args: process.env.TRAVIS === 'true' || process.env.CI === 'true' ? [ '--no-sandbox' ] : []
+          args: process.env.TRAVIS === 'true' || process.env.CI === 'true' ? [ '--no-sandbox', '--disable-dev-shm-usage' ] : []
         })
         .then(result => {
           browser = result
@@ -31,7 +31,7 @@ beforeAll(done => {
         })
         .catch(done.fail)
     })
-})
+}, 60000)
 
 afterAll(done => {
   Promise.resolve(browser && browser.close())
